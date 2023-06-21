@@ -2,4 +2,6 @@ facestest/facetest00.png antonio
 facestest/facetest02.png antonio
 facestest/facetest03.png antonio
 facestest/facetest04.png antonio
-facestest/facetest05.png traba
+facestest/facetest06.png darue
+facestest/facetest07.png luca
+facestest/facetest08.png bandeira
