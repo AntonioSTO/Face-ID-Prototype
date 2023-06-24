@@ -1,11 +1,15 @@
 import numpy as np
 import face_recognition as fr
 import cv2
+import serial
+import time
 from engine import get_rostos
 
 rostos_conhecidos, nome_dos_rostos = get_rostos()
+arduino = serial.Serial('COM7', 9600)
 
 video_capture = cv2.VideoCapture(0)
+
 while True:
     ret, frame = video_capture.read()
     
@@ -36,6 +40,23 @@ while True:
             name = nome_dos_rostos[best_id]
         else:
             name = "Desconhecido"
+            
+        if resultados[best_id]:
+            name = nome_dos_rostos[best_id]
+            arduino.write(b'1')  
+            time.sleep(0.15)
+            arduino.write(b'0')
+            time.sleep(0.2)
+            arduino.write(b'1')  
+            time.sleep(0.15)
+            arduino.write(b'0')
+            time.sleep(2)
+            
+            
+        else:
+            name = "Desconhecido"
+            arduino.write(b'0')  
+
         
         cv2.rectangle(frame, (left,top), (right,bottom), (0,255,0), 2)
         
@@ -44,10 +65,12 @@ while True:
         
         cv2.putText(frame, name, (left+6,bottom-6), font, 1.0, (255,255,255), 1)
     
-        cv2.imshow('Webcam_facerecognition', frame)
+    cv2.imshow('Webcam_facerecognition', frame)
+        
         
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 video_capture.release()
 cv2.destroyAllWindows()
+arduino.close()
