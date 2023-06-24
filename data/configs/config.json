@@ -1,6 +1,0 @@
-{
-    "type": "image",
-    "train_path": "data/datasets/img_medium/facestrain.txt",
-    "test_path": "data/datasets/img_medium/facestest.txt",
-    "classifier": "knn"
-}

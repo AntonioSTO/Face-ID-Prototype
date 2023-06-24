@@ -1,6 +1,0 @@
-Tipo de dado: image
-Diretorio: data/datasets/img_medium/
-Classificador: knn
-Tempo de treino: 0.064s
-Tempo de inferencia por amostra: 0.131s
-Precisao: 1.00

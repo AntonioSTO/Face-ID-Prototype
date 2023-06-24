@@ -1,5 +1,0 @@
-facestest/facetest00.png antonio
-facestest/facetest02.png antonio
-facestest/facetest03.png antonio
-facestest/facetest04.png antonio
-facestest/facetest05.png traba
