@@ -17,6 +17,16 @@ def get_rostos():
         rostos_conhecidos.append(antonio1[1][0])
         nomes_dos_rostos.append("Antonio")
 
+    luca1 = reconhece_face("./img/luca1.jpeg")
+    if(luca1[0]):
+        rostos_conhecidos.append(luca1[1][0])
+        nomes_dos_rostos.append("luca")
+
+    bandeira1 = reconhece_face("./img/bandeira1.jpeg")
+    if(bandeira1[0]):
+        rostos_conhecidos.append(bandeira1[1][0])
+        nomes_dos_rostos.append("Bandolhos")
+
     marcolan1 = reconhece_face("./img/marcolan1.jpeg")
     if(marcolan1[0]):
         rostos_conhecidos.append(marcolan1[1][0])

@@ -6,7 +6,7 @@ import time
 from engine import get_rostos
 
 rostos_conhecidos, nome_dos_rostos = get_rostos()
-arduino = serial.Serial('COM7', 9600)
+# arduino = serial.Serial('COM7', 9600)
 
 video_capture = cv2.VideoCapture(0)
 
@@ -43,19 +43,19 @@ while True:
             
         if resultados[best_id]:
             name = nome_dos_rostos[best_id]
-            arduino.write(b'1')  
+            '''arduino.write(b'1')  
             time.sleep(0.15)
             arduino.write(b'0')
             time.sleep(0.2)
             arduino.write(b'1')  
             time.sleep(0.15)
             arduino.write(b'0')
-            time.sleep(2)
+            time.sleep(2)'''
             
             
         else:
             name = "Desconhecido"
-            arduino.write(b'0')  
+            # arduino.write(b'0')  
 
         
         cv2.rectangle(frame, (left,top), (right,bottom), (0,255,0), 2)
@@ -73,4 +73,4 @@ while True:
 
 video_capture.release()
 cv2.destroyAllWindows()
-arduino.close()
+# arduino.close()
